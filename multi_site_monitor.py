@@ -202,7 +202,7 @@ class MultiSiteMonitor:
             print(f"✅ 이메일 발송 완료: 총 {total_count}개 새 글")
         except Exception as e:
             print(f"❌ 이메일 발송 실패: {e}")
-            raise
+            raise  # 상위에서 catch하여 처리
     
     def _create_email_html(self, all_new_posts: Dict[str, List[Dict]]) -> str:
         """이메일 HTML 생성"""
@@ -318,11 +318,17 @@ class MultiSiteMonitor:
         
         # 3. 이메일 발송
         if all_new_posts:
-            self.send_email(all_new_posts)
-            # 4. 상태 저장 (발송 성공 시에만)
-            self.save_last_checked(new_state)
+            try:
+                self.send_email(all_new_posts)
+            except Exception as e:
+                print(f"⚠️  이메일 발송 실패했지만 상태는 저장합니다: {e}")
         else:
             print("📭 모든 사이트에 새 글이 없습니다.")
+        
+        # 4. 상태 저장 (새 글 유무와 관계없이 항상 저장)
+        if new_state:
+            self.save_last_checked(new_state)
+            print(f"💾 상태 저장 완료: {len(new_state)}개 사이트")
 
 
 if __name__ == "__main__":
