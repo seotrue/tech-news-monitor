@@ -84,32 +84,44 @@ class HadaMonitor(SiteMonitor):
         soup = BeautifulSoup(response.text, 'html.parser')
         posts = []
         
-        # news.hada.io 구조: 각 글이 특정 패턴으로 나열됨
-        # 링크와 제목이 있는 항목 찾기
-        items = soup.find_all('a', href=lambda x: x and '/topic?id=' in x)
+        # news.hada.io 구조:
+        # <div class='topic_row'>
+        #   <div class='topictitle'><a href='https://외부링크' id='tr1'><h1>제목</h1></a></div>
+        #   <div class='topicdesc'><a href='topic?id=28512'>요약</a></div>  ← 슬래시 없음
+        # </div>
+        rows = soup.find_all('div', class_='topic_row')
         
-        seen_links = set()
-        for item in items[:10]:  # 최신 10개만
-            link = item.get('href', '')
-            if not link or link in seen_links:
+        for row in rows[:10]:  # 최신 10개만
+            title_div = row.find('div', class_='topictitle')
+            if not title_div:
                 continue
             
-            # 상대 경로를 절대 경로로 변환
-            if link.startswith('/'):
-                link = f"https://news.hada.io{link}"
+            link_tag = title_div.find('a')
+            if not link_tag:
+                continue
             
-            seen_links.add(link)
+            # 제목 추출 (h1 태그 안에 있음)
+            h1 = link_tag.find('h1')
+            title = h1.get_text(strip=True) if h1 else link_tag.get_text(strip=True)
+            if not title:
+                continue
             
-            # 제목 추출
-            title = item.get_text(strip=True)
-            if not title or title.startswith('#'):  # # 제거
-                title = title[1:].strip() if title else '제목 없음'
+            # 링크 추출 (외부 URL 또는 내부 topic 링크)
+            link = link_tag.get('href', '')
+            if link.startswith('topic?id='):
+                link = f"https://news.hada.io/{link}"
+            
+            # 내부 topic 링크 (ID 추적용)
+            topic_tag = row.find('a', href=lambda x: x and 'topic?id=' in x and 'go=' not in x)
+            topic_link = topic_tag.get('href', '') if topic_tag else ''
+            if topic_link and not topic_link.startswith('http'):
+                topic_link = f"https://news.hada.io/{topic_link}"
             
             posts.append({
                 'site': self.site_name,
                 'title': title,
-                'link': link,
-                'date': '최신',  # hada.io는 상대시간만 표시
+                'link': link or topic_link,
+                'date': '최신',
                 'summary': '',
             })
         
