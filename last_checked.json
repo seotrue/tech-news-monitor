@@ -1,7 +1,7 @@
 {
   "ROBOCO": [
     "b8bc032b2bb1424faa9d7dbce246fde4",
-    "75ceea17d892dbcdf3982796a1822989",
+    "8eca28236ed10a057efbe5f2de351f5a",
     "369f2c3c1cc6158632c464749ae39120",
     "dcd5a9962c43a59dfc404df2af7cbc99",
     "227677c9ec3f3f543548b3da590be1b1",
@@ -12,6 +12,8 @@
     "12d111d39573024dd44f6ac6b234633d"
   ],
   "GeekNews": [
+    "98fee6e23683d607ffdb260e3c6fbf5e",
+    "3ab389244af494c8609c622a63d18ad5",
     "d43ca614926405d6b3c3dfbc6734cf5a",
     "e6da7e045ab5e2f9e86a30dc561263e1",
     "c1719bc2c8dfd649502ff086fb12731c",
@@ -19,9 +21,7 @@
     "9f8b42f5777a51d15a62fe9a2df20150",
     "ccbce44f3c911e58a3d304e5d5f7dd43",
     "d898c45ac707859f89829d9fcb9b4d5d",
-    "2a69669a66d0ceae03fbc5637df42801",
-    "265bba28bc5982de923600d88e1a58f3",
-    "95bf4403e55acb6647b99546c82a181d"
+    "2a69669a66d0ceae03fbc5637df42801"
   ],
-  "last_check_time": "2026-06-13T02:15:33.841982"
+  "last_check_time": "2026-06-13T11:08:28.207595"
 }
