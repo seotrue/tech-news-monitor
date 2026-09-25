@@ -1,5 +1,6 @@
 {
   "ROBOCO": [
+    "fea53eee215a2a3ffe53dcf9a42ed5e5",
     "81147304cbfe622c4f16b449535c7391",
     "a5456c5a4d6aa4089b27d8c4c84f246c",
     "a1425525e7d5854b50e5d24d2846ff66",
@@ -8,10 +9,10 @@
     "b8bc032b2bb1424faa9d7dbce246fde4",
     "8eca28236ed10a057efbe5f2de351f5a",
     "369f2c3c1cc6158632c464749ae39120",
-    "dcd5a9962c43a59dfc404df2af7cbc99",
-    "227677c9ec3f3f543548b3da590be1b1"
+    "dcd5a9962c43a59dfc404df2af7cbc99"
   ],
   "GeekNews": [
+    "a964ebf7099a71e6af972ed9307fe7e6",
     "b740619cad85ab6b8c43f5b21ab852de",
     "e51fb6512b5c257e07e150f15b7c9f03",
     "42ef3ab2b4da10b6a9512408983608e8",
@@ -20,8 +21,7 @@
     "5ea272c94fda8350f4942f92ff038e18",
     "35a24fdd0f0345375a7f6a50645787a8",
     "fe087f7e60ebc9935c87c96f81f67247",
-    "0ca227dba7bd2a00abf76fe0d9049faa",
-    "133224636f74b1f431571c35513da9ed"
+    "0ca227dba7bd2a00abf76fe0d9049faa"
   ],
-  "last_check_time": "2026-09-24T13:53:42.511252"
+  "last_check_time": "2026-09-25T02:27:06.167468"
 }
