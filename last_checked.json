@@ -1,5 +1,6 @@
 {
   "ROBOCO": [
+    "09d61a142e1020ad195e7a30c988fb50",
     "7f1b491b792f4b743439c347a4a09704",
     "5da70e0807dcee229bfa0dd051bcc28e",
     "88c935a09ffd290535de9d9fe0a57648",
@@ -8,10 +9,11 @@
     "6e70d7e4801ce90364b9238ee04cebf6",
     "9f65a99903477bddef040f3e8bd74f1f",
     "45bbc0be551eb9c4ca608a01e6f7737e",
-    "3ade54a2cd505f4833516c96e236af6d",
-    "52d3a508ab15c2c61f1ced63472d6b59"
+    "3ade54a2cd505f4833516c96e236af6d"
   ],
   "GeekNews": [
+    "e666ff1cd106b02d9fb6407eee447c67",
+    "b16e6e43e2a58b8172e507858f232ff1",
     "00b541d74dea96fd751db89ed1558d52",
     "67d9135699dbb161be6662fa171ae9f0",
     "df8f062d8f4c3a2fd0cd58b31dd41b76",
@@ -19,9 +21,7 @@
     "a1b4d8282b12adaa7843af07d5f47e60",
     "a96412c214c46a8099094a78f5509997",
     "e479ed583cf4e75522600192432b6b7d",
-    "bbb0049cffb43951e80384bac4f29e5b",
-    "e662f6adedbb906fd7735dd847478672",
-    "799d5d4d3cbe31d3ef1c41380f0c5baf"
+    "bbb0049cffb43951e80384bac4f29e5b"
   ],
-  "last_check_time": "2026-11-04T03:52:09.571099"
+  "last_check_time": "2026-11-04T16:39:54.995171"
 }
